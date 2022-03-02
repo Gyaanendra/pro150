@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+
+    <a-camera wasd-controls-enabled="false" position="0 8 20"></a-camera>
+
+    <!-------------------------------------------Asset Management------------------------------------------->
+    <a-assets>      
+
+      <!--Add Code Here-->
+      <a-asset-item id="trainobj" src="./train/tinker.obj"></a-asset-item>
+      <a-asset-item id="trainmtl" src="./train/obj.mtl"></a-asset-item>
+
+
+    </a-assets>
+    <!-------------------------------------------SKY------------------------------------------->
+    <a-camera position="0 10 35"></a-camera>
+    <a-sky src="istockphoto.jpg"  animation="property: rotation; to: 0 360 0;easing:linear; loop: true; dur: 5000"></a-sky>
+    
+    <!--------------------------------------OBJ Models----------------------------------------------------------->   
+  
+    <!--Add code here-->
+    <a-entity obj-model="obj:#trainobj;mtl:#trainmtl" position="-9 0 9" rotation="-90 25 -15" scale="0.2 0.2 0.2"></a-entity>
+
+    
+    <!-------------------------------------Circular Plane----------------------------------------------->
+    
+    <a-plane
+        id="wall-poster-middle"
+        src="floor.jpg"
+        position="-0.4 -0.76 -25"
+        rotation="-90 0 0"
+        width="250"
+        height="260"
+      ></a-plane>
+
+      <a-plane position="-9 0 10" width="100" height="1" rotation="-90 -45 -120" color="black"></a-plane>
+      <a-plane position="-9 0 5" width="100" height="1" rotation="-90 -45 -120" color="black"></a-plane>
+    
+  
+    
+    
+  </a-scene>
+</body>
+
+</html>
